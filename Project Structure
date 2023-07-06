@@ -1,0 +1,37 @@
+Social-api/
+├── app/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── routes/
+│   │   │   ├── __init__.py
+│   │   │   └── some_router.py
+│   │   └── models/
+│   │       ├── __init__.py
+│   │       └── some_model.py
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   └── database.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   └── some_service.py
+│   ├── utils/
+│   │   ├── __init__.py
+│   │   └── helpers.py
+│   ├── main.py
+│   └── dependencies.py
+├── tests/
+│   ├── __init__.py
+│   ├── test_routes/
+│   │   ├── __init__.py
+│   │   └── test_some_router.py
+│   ├── test_services/
+│   │   ├── __init__.py
+│   │   └── test_some_service.py
+│   └── conftest.py
+├── .env
+├── .gitignore
+├── README.md
+├── requirements.txt
+└── pyproject.toml
