@@ -2,3 +2,4 @@ venv
 .env
 __pycache*
 backup
+DS_Store
