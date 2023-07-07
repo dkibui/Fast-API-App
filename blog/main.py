@@ -10,4 +10,5 @@ models.Base.metadata.create_all(db.engine)
 
 @app.get("/", response_class=HTMLResponse)
 async def create_blog(request: Request):
-    return templates.TemplateResponse("index.html", context={"request": request})
+    context = {"request": request}
+    return templates.TemplateResponse("index.html", context)
