@@ -1,15 +1,19 @@
-from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+import psycopg2
+from psycopg2 import Error
 
 user = "postgres"
 password = "3786"
 host = "localhost"
 db = "fastapi"
+port = 5432
 
-SQLALCHEMY_DATABASE_URL = f"postgresql://{user}:{password}@{host}/{db}"
 
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-Base = declarative_base()
+def db_connection():
+    try:
+        connection = psycopg2.connect(
+            host=host, port=port, database=db, user=user, password=password
+        )
+        print("Connection to Postgres successful")
+        return connection
+    except (Exception, Error) as error:
+        print("Error while connecting to PostgreSQL:", error)
