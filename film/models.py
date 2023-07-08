@@ -1,13 +1,11 @@
-from sqlalchemy import Boolean, Column, Integer, String
-from sqlalchemy.orm import relationship
+from sqlalchemy import Column, Integer, String
 
-from blog.db import Base
+from film.db import Base
 
 
-class Blog(Base):
-    __tablename__ = "blogs"
+class Film(Base):
+    __tablename__ = "films"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String)
-    body = Column(String)
-    published = Column(Boolean, default=True)
+    name = Column(String, unique=True)
+    director = Column(String)
