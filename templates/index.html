@@ -12,26 +12,25 @@
 </head>
 
 <body>
-    <div class="w-11/12 mx-auto">
+    <div class="w-11/12 mx-auto bg-green-50">
         <h1 class="text-2xl">Hello Fastapi</h1>
 
         <p class="text-2xl font-bold mb-4">Movie List</p>
 
-        <table class="min-w-[50%] mt-2 mb-4">
+        <table class="min-w-[50%] mt-2 mb-4 text-left">
             <thead class="border-b text-lg">
                 <tr>
-                    <th class="border">Film name</th>
-                    <th class="border">Director</th>
+                    <th class="border p-2">Film name</th>
+                    <th class="border p-2">Director</th>
                 </tr>
             </thead>
-            <tbody class="text-sm">
-                <tr>
-                    <th class="border">Blade Runner</th>
-                    <th class="border">Ridley Scott</th>
-                </tr>
+            <tbody class="text-sm" id="table-body">
+                {% include 'table.html' %}
             </tbody>
         </table>
-        <button class="px-3 py-2 bg-blue-600 text-white">Load more</button>
+        <button class="px-3 py-2 bg-blue-600 text-white" hx-get="/" hx-target="#table-body" hx-swap="beforeend">
+            Load more
+        </button>
     </div>
 
 
